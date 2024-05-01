@@ -1,0 +1,17 @@
+{
+  "editor.tabSize": 2,
+  "files.exclude": {
+    ".next/": true,
+    ".vscode/": true,
+    "node_modules/": true,
+    "next-env.d.ts": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[jsx-tags]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}

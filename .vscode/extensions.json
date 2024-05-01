@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "paulmolluzzo.convert-css-in-js",
+    "editorconfig.editorconfig",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "lehni.vscode-fix-checksums",
+    "ecmel.vscode-html-css",
+    "visualstudioexptteam.vscodeintellicode",
+    "visualstudioexptteam.intellicode-api-usage-examples",
+    "zignd.html-css-class-completion",
+    "xabikos.javascriptsnippets",
+    "ms-vscode.vscode-typescript-next",
+    "foxundermoon.next-js",
+    "herrmannplatz.npm-dependency-links",
+    "christian-kohler.npm-intellisense",
+    "leodriesch.paste-html-as-jsx",
+    "christian-kohler.path-intellisense",
+    "csstools.postcss",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
