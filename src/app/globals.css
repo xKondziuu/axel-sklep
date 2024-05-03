@@ -4,7 +4,15 @@
 
 /* Czcionki */
 @font-face {
-  font-family: 'OpenSans-Variable';
+  font-family: 'Fredoka';
+  src: url('/fonts/Fredoka-SemiBold.ttf');
+  font-style: medium;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
   src: url('/fonts/OpenSans-Variable.ttf');
   font-style: medium;
   font-weight: normal;
@@ -12,10 +20,10 @@
 }
 
 @font-face {
-  font-family: 'Roboto-Regular';
+  font-family: 'Roboto';
   src: url('/fonts/Roboto-Regular.ttf');
   font-style: medium;
-  font-weight: normal;
+  font-weight: 400;
   font-display: swap;
 }
 

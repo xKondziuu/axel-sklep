@@ -1,3 +1,10 @@
+import Header from './components/header'
+
 export default function HomePage() {
-  return <h1>Hello World!</h1>
+  return (
+    <div id="root" className="size-full">
+      <style>{'body {background-image: url(/img/example.jpg)}'}</style>
+      <Header />
+    </div>
+  )
 }

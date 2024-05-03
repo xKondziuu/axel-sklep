@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Roboto } from 'next/font/google'
 import './globals.css'
 
@@ -23,10 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <Script src="/fa6pro/js/all.min.js" />
       <body className={roboto.className} dir="ltr">
-        <div id="root" className="size-full">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   )
