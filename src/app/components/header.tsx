@@ -81,14 +81,14 @@ export default function Header() {
     disableNavExpanded()
   })
 
-  // window.addEventListener('resize', () => {
-  //   disableNavExpanded()
-  // })
+  window.addEventListener('resize', () => {
+    disableNavExpanded()
+  })
 
   function NavButton() {
     return (
       <button className="flex h-full flex-row flex-nowrap items-center justify-center gap-2 px-3" onClick={toggleNavExpanded}>
-        <div className="xs:hidden -mt-0.5 mr-7 font-opensans font-semibold" style={{ opacity: navExpanded ? '0.5' : '1' }}>
+        <div className="-mt-0.5 mr-7 font-opensans font-semibold xs:hidden" style={{ opacity: navExpanded ? '0.5' : '1' }}>
           <span className="select-none truncate text-xl">Menu</span>
         </div>
         <div className="text-3xl *:*:absolute *:*:-translate-x-full *:*:-translate-y-1/2">
@@ -114,10 +114,10 @@ export default function Header() {
             <div className="contents w-max lg:hidden">
               <Navigator />
             </div>
-            <div className="+lg:hidden contents sm:hidden">
+            <div className="contents sm:hidden +lg:hidden">
               <PhoneTime />
             </div>
-            <div className="+lg:hidden contents">
+            <div className="contents +lg:hidden">
               <NavButton />
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function Header() {
           <div className="invisible w-px lg:hidden"></div>
         </div>
         <div
-          className="bg-headernav +sm:landscape:max-h-[10.5rem] +md:max-h-[10.5rem] flex flex-col flex-wrap items-center justify-center shadow-lg transition-opacity"
+          className="flex flex-col flex-wrap items-center justify-center bg-headernav shadow-lg transition-opacity +md:max-h-[10.5rem] +sm:landscape:max-h-[10.5rem]"
           style={{ opacity: navExpanded ? '1' : '0' }}
         >
           <Navigator />
