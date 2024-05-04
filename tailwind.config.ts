@@ -22,8 +22,9 @@ const config: Config = {
         "yellow": "#ff0",
       },
       backgroundColor: {
-        "header": "#343333FB",
-        "headernav": "#4e4b48F5"
+        "header": "#343333E0",
+        "headerlg": "#343333F0",
+        "headernav": "#4e4b48F0"
       },
       fontFamily: {
         "fredoka": "Fredoka",

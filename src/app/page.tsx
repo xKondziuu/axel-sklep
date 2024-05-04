@@ -1,10 +1,15 @@
-import Header from './components/header'
+import Header from './components/misc/header'
+import Main from './components/misc/main'
+//
+import Welcome from './components/welcome'
 
 export default function HomePage() {
   return (
-    <div id="root" className="size-full">
-      <style>{'body {background-image: url(/img/example.jpg)}'}</style>
+    <div id="root" style={{ height: '170vh' }}>
       <Header />
+      <Main>
+        <Welcome />
+      </Main>
     </div>
   )
 }
