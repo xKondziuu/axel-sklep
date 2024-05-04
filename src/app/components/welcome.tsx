@@ -14,6 +14,7 @@ export default function Welcome() {
           <Image src={'/images/example.jpg'} width={ScreenWidth} height={ScreenHeight} alt="" loading="eager" />
         )} */}
         <Video src="/videos/example/index.m3u8" autoplay fadein loop muted playsinline />
+        <div className="bg-transparent"></div>
       </div>
     </div>
   )

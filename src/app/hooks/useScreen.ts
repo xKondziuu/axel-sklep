@@ -4,7 +4,6 @@ type outputPart = number | undefined
 type outputArray = [outputPart, outputPart]
 
 export function useScreen(): outputArray {
-  
   const [width, setWidth] = useState<outputPart>(undefined)
   const [height, setHeight] = useState<outputPart>(undefined)
 
@@ -14,5 +13,4 @@ export function useScreen(): outputArray {
   }, [])
 
   return [width, height]
-
 }

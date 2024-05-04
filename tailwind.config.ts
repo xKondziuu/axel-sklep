@@ -23,6 +23,7 @@ const config: Config = {
       },
       backgroundColor: {
         "header": "#343333E0",
+        "headertop": "#343333D0",
         "headerlg": "#343333F0",
         "headernav": "#4e4b48F0"
       },

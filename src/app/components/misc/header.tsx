@@ -3,17 +3,6 @@
 import { useEffect, useState } from 'react'
 
 export default function Header() {
-  function Logo() {
-    return (
-      <span
-        className="cursor-default select-none truncate font-fredoka text-3xl font-semibold drop-shadow-lg"
-        style={{ color: '#13a49d' }}
-      >
-        AXEL Electronics
-      </span>
-    )
-  }
-
   function PhoneTime() {
     return (
       <div className="flex flex-row flex-nowrap items-center justify-center gap-2 opacity-75">
@@ -37,7 +26,7 @@ export default function Header() {
     return (
       <a
         href={props.url}
-        className="mx-1.5 block min-w-max px-1.5 lg:my-2 lg:py-1.5"
+        className="mx-0.5 block min-w-max p-1.5 lg:my-2 lg:py-1.5"
         style={{ cursor: props.selected ? 'default' : 'pointer' }}
       >
         <div
@@ -84,7 +73,7 @@ export default function Header() {
     window.addEventListener('resize', () => {
       disableNavExpanded()
     })
-  })
+  }, [])
 
   function NavButton() {
     return (
@@ -104,12 +93,40 @@ export default function Header() {
     )
   }
 
+  const [scrollTop, setScrollTop] = useState<boolean>(true)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      let scroll = window.scrollY
+      if (scroll <= 20) {
+        setScrollTop(true)
+      } else {
+        setScrollTop(false)
+      }
+    })
+  }, [])
+
+  function Logo() {
+    return (
+      <span
+        className="cursor-default select-none truncate font-fredoka text-4xl font-semibold drop-shadow-lg transition-all lg:text-3xl"
+        style={{ color: '#13a49d' /* fontSize: scrollTop ? '3rem' : '1.875rem' */ }}
+      >
+        AXEL Electronics
+      </span>
+    )
+  }
+
   return (
     <>
-      <header className="lg:bg-headerlg fixed top-0 z-10 h-14 w-full min-w-[320px] items-center overflow-hidden bg-header text-white shadow-md backdrop-blur-md lg:overflow-visible">
-        <div className="flex w-full flex-row flex-nowrap items-center justify-between">
+      <header
+        className="fixed top-0 z-10 h-16 w-full min-w-[320px] items-center overflow-hidden bg-header text-white shadow-md backdrop-blur-md transition-all lg:max-h-14 lg:overflow-visible lg:bg-headerlg"
+        style={{ backgroundColor: scrollTop ? '#343333A0' : '#343333E0' }}
+      >
+        <style>{`@media (max-width: 1023px) {header {background-color: #343333F0!important;}}`}</style>
+        <div className="flex h-full w-full flex-row flex-nowrap items-center justify-between">
           <div className="flex h-full w-full min-w-max max-w-[75rem] flex-row flex-nowrap items-center justify-between">
-            <div className="mx-3 flex h-14 min-w-max items-center justify-center px-1.5 pl-0">
+            <div className="mx-3 flex h-14 min-w-max items-center justify-center pl-0 pr-1">
               <Logo />
             </div>
             <div className="contents w-max lg:hidden">
