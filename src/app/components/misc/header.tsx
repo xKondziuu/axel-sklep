@@ -1,16 +1,30 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 export default function Header() {
-  function PhoneTime() {
+  function PhoneNumber() {
     return (
-      <div className="flex flex-row flex-nowrap items-center justify-center gap-2 opacity-75">
+      <div className="semi-2sm flex flex-row flex-nowrap items-center justify-center gap-2 opacity-70">
         <div className="translate-y-px select-none">
           <i className="fa-solid fa-phone" />
         </div>
         <div className="select-none text-nowrap font-opensans">
-          <span className="cursor-default tracking-wider drop-shadow-md">9:00 - 17:00</span>
+          <span className="cursor-text select-text tracking-wider drop-shadow-md">(+48) 71 342 94 43</span>
+        </div>
+      </div>
+    )
+  }
+
+  function EmailAddress() {
+    return (
+      <div className="flex flex-row flex-nowrap items-center justify-center gap-2 opacity-70">
+        <div className="translate-y-px select-none">
+          <i className="fa-solid fa-envelope" />
+        </div>
+        <div className="select-none text-nowrap font-opensans">
+          <span className="cursor-text select-text tracking-wider drop-shadow-md">axel@axel-sklep.com.pl</span>
         </div>
       </div>
     )
@@ -26,7 +40,7 @@ export default function Header() {
     return (
       <a
         href={props.url}
-        className="mx-0.5 block min-w-max p-1.5 lg:my-2 lg:py-1.5"
+        className="mx-0.5 block min-w-max p-1.5 transition-opacity hover:opacity-55 lg:my-2 lg:py-1.5"
         style={{ cursor: props.selected ? 'default' : 'pointer' }}
       >
         <div
@@ -42,12 +56,12 @@ export default function Header() {
   function Navigator() {
     return (
       <nav className="contents select-none font-opensans tracking-wide">
-        <NavItem title="Informacje" url="" selected />
+        <NavItem title="Start" url="" selected />
         <NavItem title="Oferta sklepu" url="" />
         <NavItem title="Usługi serwisowe" url="" />
         <NavItem title="Zamówienia" url="" />
-        <NavItem title="Doradztwo" url="" />
-        <NavItem title="Galeria zdjęć" url="" />
+        <NavItem title="Kontakt" url="" />
+        <NavItem title="Zdjęcia" url="" />
       </nav>
     )
   }
@@ -78,7 +92,7 @@ export default function Header() {
   function NavButton() {
     return (
       <button className="flex h-full flex-row flex-nowrap items-center justify-center gap-2 px-3" onClick={toggleNavExpanded}>
-        <div className="-mt-0.5 mr-7 font-opensans font-semibold xs:hidden" style={{ opacity: navExpanded ? '0.5' : '1' }}>
+        <div className="-mt-0.5 mr-7 font-opensans font-semibold" style={{ opacity: navExpanded ? '0.5' : '1' }}>
           <span className="select-none truncate text-xl">Menu</span>
         </div>
         <div className="text-3xl *:*:absolute *:*:-translate-x-full *:*:-translate-y-1/2">
@@ -120,27 +134,33 @@ export default function Header() {
   return (
     <>
       <header
-        className="fixed top-0 z-10 h-16 w-full min-w-[320px] items-center overflow-hidden bg-header text-white shadow-md backdrop-blur-md transition-all lg:max-h-14 lg:overflow-visible lg:bg-headerlg"
+        className="fixed top-0 z-10 h-[4.5rem] w-full min-w-[320px] items-center overflow-hidden bg-header text-white shadow-md backdrop-blur-md transition-all lg:max-h-14 lg:overflow-visible lg:bg-headerlg"
         style={{ backgroundColor: scrollTop ? '#343333A0' : '#343333E0' }}
       >
-        <style>{`@media (max-width: 1023px) {header {background-color: #343333F0!important;}}`}</style>
+        <style>{`@media (max-width: 979px) {header {background-color: #343333F0!important;}} @media (max-width: 520px) {.semi-2sm {display: none!important;}}`}</style>
         <div className="flex h-full w-full flex-row flex-nowrap items-center justify-between">
-          <div className="flex h-full w-full min-w-max max-w-[75rem] flex-row flex-nowrap items-center justify-between">
-            <div className="mx-3 flex h-14 min-w-max items-center justify-center pl-0 pr-1">
-              <Logo />
+          <div className="flex h-full min-w-max max-w-[75rem] flex-row flex-nowrap items-center gap-[2vw] overflow-hidden lg:w-full lg:justify-between">
+            <div className="mr-1 flex h-14 min-w-max items-center justify-center pl-0 pr-1 *:h-auto *:w-[14.75rem] *:opacity-95 lg:*:w-[12rem]">
+              <Image src="/images/logo_test.png" height="2048" width="6144" alt="" />
             </div>
             <div className="contents w-max lg:hidden">
               <Navigator />
             </div>
-            <div className="contents sm:hidden +lg:hidden">
-              <PhoneTime />
+            <div className="contents xs:hidden +lg:hidden">
+              <PhoneNumber />
+            </div>
+            <div className="contents md:hidden +lg:hidden">
+              <EmailAddress />
             </div>
             <div className="contents +lg:hidden">
               <NavButton />
             </div>
           </div>
+          <div className="contents xl:hidden">
+            <PhoneNumber />
+          </div>
           <div className="contents 2xl:hidden">
-            <PhoneTime />
+            <EmailAddress />
           </div>
           <div className="invisible w-px lg:hidden"></div>
         </div>

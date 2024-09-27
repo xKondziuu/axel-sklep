@@ -22,7 +22,7 @@ const config: Config = {
         "yellow": "#ff0",
       },
       backgroundColor: {
-        "header": "#343333E0",
+        "header": "#343333D5",
         "headertop": "#343333D0",
         "headerlg": "#343333F0",
         "headernav": "#4e4b48F0"
@@ -34,14 +34,14 @@ const config: Config = {
     },
     screens: {
       '2xl': {'max': '1439px'},
-      'xl': {'max': '1279px'},
-      'lg': {'max': '1023px'},
+      'xl': {'max': '1189px'},
+      'lg': {'max': '979px'},
       'md': {'max': '767px'},
       'sm': {'max': '639px'},
       'xs': {'max': '379px'},
       '+2xl': {'max': '1440px'},
-      '+xl': {'min': '1280px'},
-      '+lg': {'min': '1024px'},
+      '+xl': {'min': '1190px'},
+      '+lg': {'min': '980px'},
       '+md': {'min': '768px'},
       '+sm': {'min': '640px'},
       '+xs': {'max': '380px'},

@@ -11,7 +11,7 @@ export default function Welcome() {
     <div id="welcome" className="h-[80vh] w-full lg:h-auto">
       <div className="size-full bg-zinc-800 *:absolute *:size-full *:h-[80vh] *:object-cover *:object-center lg:*:h-auto">
         {/* {ScreenWidth && ScreenHeight && (
-          <Image src={'/images/example.jpg'} width={ScreenWidth} height={ScreenHeight} alt="" loading="eager" />
+          <Image src={'/images/example.jpg'} width={Number(ScreenWidth * 0.8)} height={ScreenHeight} alt="" loading="eager" />
         )} */}
         <Video src="/videos/welcome/index.m3u8" autoplay fadein loop muted playsinline />
         <div className="bg-black bg-transparent opacity-10 backdrop-blur-[2px]"></div>
