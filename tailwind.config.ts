@@ -24,12 +24,16 @@ const config: Config = {
       backgroundColor: {
         "header": "#343333D5",
         "headertop": "#343333D0",
-        "headerlg": "#343333F0",
+        "headerlg": "#343333E0",
         "headernav": "#4e4b48F0"
       },
       fontFamily: {
         "fredoka": "Fredoka",
-        "opensans": "OpenSans, Verdana, Arial"
+        "opensans": "OpenSans, Verdana, Arial",
+        "roboto": "Roboto, Calibri, Arial"
+      },
+      fontSize: {
+        "3xl": ["2rem", "2.25rem"]
       }
     },
     screens: {
@@ -38,13 +42,13 @@ const config: Config = {
       'lg': {'max': '979px'},
       'md': {'max': '767px'},
       'sm': {'max': '639px'},
-      'xs': {'max': '379px'},
-      '+2xl': {'max': '1440px'},
+      'xs': {'max': '419px'},
+      '+2xl': {'min': '1440px'},
       '+xl': {'min': '1190px'},
       '+lg': {'min': '980px'},
       '+md': {'min': '768px'},
       '+sm': {'min': '640px'},
-      '+xs': {'max': '380px'},
+      '+xs': {'min': '420px'},
     }
   },
   plugins: [],

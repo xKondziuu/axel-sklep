@@ -32,13 +32,17 @@
   --background-rgb: rgb(255, 255, 255);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-size: 100%;
   margin: 0px;
   padding: 0px;
-  scroll-behavior: smooth;
+  min-width: 320px;
 }
 
 body > #root {
@@ -48,6 +52,10 @@ body > #root {
 
 *:focus {
   outline: none;
+}
+
+h1, h2, h3, h4, h5 {
+  word-spacing: 2px;
 }
 
 @layer utilities {
