@@ -30,10 +30,12 @@ const config: Config = {
       fontFamily: {
         "fredoka": "Fredoka",
         "opensans": "OpenSans, Verdana, Arial",
-        "roboto": "Roboto, Calibri, Arial"
+        "roboto": "Roboto, Calibri, Arial",
+        "verdana": "Verdana, Calibri, Arial",
       },
       fontSize: {
-        "3xl": ["2rem", "2.25rem"]
+        "3xl": ["2rem", "2.25rem"],
+        "4xl": ["2.35rem", "2.5rem"]
       }
     },
     screens: {

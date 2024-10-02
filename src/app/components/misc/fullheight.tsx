@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
 
 export default function FullHeight(props: PropsWithChildren) {
-  return <div className="flex h-[100vh] flex-col overflow-hidden xl:landscape:h-auto">{props.children}</div>
+  return <div className="flex h-[100vh] flex-col overflow-hidden +xl:min-h-[48rem] xl:landscape:h-auto">{props.children}</div>
 }

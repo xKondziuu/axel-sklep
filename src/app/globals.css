@@ -54,8 +54,16 @@ body > #root {
   outline: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5 {
   word-spacing: 2px;
+}
+
+hr {
+  border-color: currentColor;
 }
 
 @layer utilities {

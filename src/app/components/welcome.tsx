@@ -8,7 +8,7 @@ export default function Welcome() {
   const [ScreenWidth, ScreenHeight] = useScreen()
 
   return (
-    <div id="start" className="w-full flex-grow overflow-hidden xl:landscape:flex-grow-0">
+    <div id="start" className="w-full flex-grow overflow-hidden +xl:min-h-[32rem] xl:landscape:flex-grow-0">
       <div className="size-full bg-zinc-800 *:size-full *:object-cover *:object-center">
         {ScreenWidth && ScreenHeight && (
           <Image src={'/images/example.jpg'} width={Number(ScreenWidth * 0.8)} height={ScreenHeight} alt="" loading="eager" />

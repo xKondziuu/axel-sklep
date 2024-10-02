@@ -1,4 +1,5 @@
-import { PropsWithChildren, useEffect, useState } from 'react'
+import type { PropsWithChildren } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Navigator from './header/navigator'
 
