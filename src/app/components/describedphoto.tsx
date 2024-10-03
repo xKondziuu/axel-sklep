@@ -10,8 +10,8 @@ interface DescribedPhotoProps {
 
 export default function DescribedPhoto(props: PropsWithChildren<DescribedPhotoProps>) {
   return (
-    <div className="flex w-full flex-row flex-nowrap items-center justify-center lg:flex-wrap +lg:gap-6 +lg:p-2">
-      <div className="h-40 min-w-max p-4 *:h-full *:rounded-md lg:p-1 xs:h-[39vw] xs:min-h-[124px]">
+    <div className="flex w-full flex-row flex-nowrap items-center justify-center xl:mx-auto lg:mb-3 lg:flex-wrap +lg:gap-4 +lg:p-2 +lg:pt-1 +lg:xl:w-[90%]">
+      <div className="h-40 min-w-max p-4 *:h-full *:rounded-md xl:pl-1 lg:p-1 xs:h-[39vw] xs:min-h-[124px]">
         <Picture src={props.src} alt={props.alt} loading="lazy" />
       </div>
       <div className="flex h-full max-w-[46rem] flex-grow flex-col flex-nowrap gap-3 py-6 lg:gap-px lg:py-3">
@@ -21,11 +21,7 @@ export default function DescribedPhoto(props: PropsWithChildren<DescribedPhotoPr
           </div>
         )}
         <div className="mx-auto contents">
-          <ResponsiveText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit dapibus urna tincidunt, quis luctus
-            mauris euismod. Nunc vestibulum interdum dolor id maximus. In nec erat dolor. Nullam risus augue, auctor et rhoncus
-            lacinia eu consequat.
-          </ResponsiveText>
+          <ResponsiveText>{props.children}</ResponsiveText>
         </div>
       </div>
     </div>
