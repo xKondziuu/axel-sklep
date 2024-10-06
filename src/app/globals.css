@@ -70,4 +70,11 @@ hr {
   .text-balance {
     text-wrap: balance;
   }
+  .text-neon {
+    color: #fff;
+    text-shadow:
+      0 0 5px #fafafa30,
+      0 0 10px #fafafa30,
+      0 0 20px #fafafa30  
+  }
 }
