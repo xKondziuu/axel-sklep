@@ -1,6 +1,6 @@
 import type { MouseEventHandler } from "react"
 
-export type validNavItems = 'Start' | 'Oferta sklepu' | 'Usługi serwisowe' | 'Zamówienia' | 'Kontakt' | 'Zdjęcia'
+export type validNavItems = 'Start' | 'Oferta sklepu' | 'Usługi serwisowe' | 'Kontakt' | 'Zdjęcia'
 
 export type NavItemsList = {
   title: validNavItems

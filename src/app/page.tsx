@@ -32,16 +32,33 @@ const topCarouselTheme: CustomFlowbiteTheme = {
   }
 }
 
-export default function HomePage() {
-  function CarouselControl(dir: 'left' | 'right') {
-    // prettier-ignore
-    return (
-      <div className={`text-4xl opacity-65 hover:opacity-80 transition-opacity drop-shadow-lg lg:absolute lg:top-14 ${dir == 'left' ? 'lg:left-1 xs:left-0' : 'lg:right-1 xs:right-0'} xs:text-3xl +xs:p-0.5`}>
-        <i className={`fa-light fa-angle-${dir}`} />
-      </div>
-    )
-  }
+const topCarouselControl = (dir: 'left' | 'right') => {
+  // prettier-ignore
+  return (
+    <div className={`text-4xl opacity-65 hover:opacity-80 transition-opacity drop-shadow-lg lg:absolute lg:top-14 ${dir == 'left' ? 'lg:left-1 xs:left-0' : 'lg:right-1 xs:right-0'} xs:text-3xl +xs:p-0.5`}>
+      <i className={`fa-light fa-angle-${dir}`} />
+    </div>
+  )
+}
 
+const servicesCarouselTheme: CustomFlowbiteTheme = {
+  carousel: {
+    indicators: {
+      base: 'h-1.5 w-1.5 rounded-full opacity-70 drop-shadow-lg'
+    }
+  }
+}
+
+const servicesCarouselControl = (dir: 'left' | 'right') => {
+  // prettier-ignore
+  return (
+    <div className={`text-4xl opacity-65 hover:opacity-80 transition-opacity drop-shadow-lg lg:absolute lg:top-14 ${dir == 'left' ? 'lg:left-1 xs:left-0' : 'lg:right-1 xs:right-0'} xs:text-3xl +xs:p-0.5`}>
+      <i className={`fa-light fa-angle-${dir}`} />
+    </div>
+  )
+}
+
+export default function HomePage() {
   return (
     <div id="root">
       <Header />
@@ -79,8 +96,8 @@ export default function HomePage() {
             <div className="w-[100vw] min-w-[320px] *:w-full lg:px-6 +xl:max-w-[73rem]">
               <Carousel
                 theme={topCarouselTheme.carousel}
-                leftControl={CarouselControl('left')}
-                rightControl={CarouselControl('right')}
+                leftControl={topCarouselControl('left')}
+                rightControl={topCarouselControl('right')}
                 slideInterval={10000}
                 pauseOnHover
               >
@@ -135,7 +152,7 @@ export default function HomePage() {
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Preparaty chemiczne">
+                  <OfferItem src="http://www.axel-sklep.com.pl/media/galeria/img/9.jpg" title="Preparaty chemiczne">
                     <li>Czyszczenie i konserwacja</li>
                     <li>Do lutowania</li>
                     <li>Termoprzewodzące</li>
@@ -143,7 +160,7 @@ export default function HomePage() {
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Wyświetlacze i LED">
+                  <OfferItem src="http://www.axel-sklep.com.pl/media/galeria/img/8.jpg" title="Wyświetlacze i LED">
                     <li>LED 3mm, 5mm, SMD</li>
                     <li>Taśmy LED RGB na metry</li>
                     <li>Wyświetlacze LED i LCD</li>
@@ -219,32 +236,78 @@ export default function HomePage() {
         <Container color="#333333" whitetext>
           <Wrapper>
             <TitledArea H={1} title="Usługi serwisowe">
-              <div className="flex h-[40rem] flex-row flex-nowrap sm:flex-col-reverse sm:flex-wrap">
-                <div className="flex h-full flex-[0_1_66.66%] justify-center p-4 xl:flex-[0_1_60%] lg:flex-[0_1_50%]">
-                  <ResponsiveText align="justify">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet arcu nibh. Integer vestibulum, urna id
-                    feugiat fermentum, libero augue sodales arcu, id auctor justo leo ut tellus. Mauris convallis porta viverra.
-                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis scelerisque
-                    quam vitae lorem congue efficitur. Cras egestas tristique tortor, a malesuada nisl semper viverra. Mauris nec
-                    augue elementum, tristique ex quis, condimentum ligula. Pellentesque dictum elementum sagittis. Nulla
-                    scelerisque ullamcorper convallis. In lectus erat, suscipit vel est sit amet, consequat pharetra magna.
-                    Suspendisse potenti.
-                  </ResponsiveText>
+              <div className="-mx-2 -mt-2 flex h-full flex-row flex-nowrap lg:flex-col-reverse lg:flex-wrap lg:gap-4">
+                <div className="flex h-full flex-[0_1_75%] justify-center p-4 xl:flex-[0_1_60%] lg:flex-[0_1_50%]">
+                  <div className="flex h-full flex-col">
+                    <div className="w-full">
+                      <ResponsiveText align="justify">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet arcu nibh. Integer vestibulum, urna id
+                        feugiat fermentum, libero augue sodales arcu, id auctor justo leo ut tellus. Mauris convallis porta viverra.
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis scelerisque
+                        quam vitae lorem congue efficitur. Cras egestas tristique tortor, a malesuada nisl semper viverra. Mauris
+                        nec augue elementum, tristique ex quis, condimentum ligula. Pellentesque dictum elementum sagittis. Nulla
+                        scelerisque ullamcorper convallis. In lectus erat, suscipit vel est sit amet, consequat pharetra magna.
+                        Suspendisse potenti.
+                      </ResponsiveText>
+                    </div>
+                    <div className="flex-grow pt-8">
+                      <div className="flex h-full flex-row flex-nowrap">
+                        <div className="size-full">
+                          <TitledArea H={3} title="Co naprawimy?">
+                            <ResponsiveText className="text-[1.15rem] tracking-normal xl:text-[1.07rem] lg:text-[1.07rem] xs:text-[0.95rem]">
+                              <ul className="list-none text-center *:pb-3">
+                                <li className="leading-tight">
+                                  Wybrane wymontowane
+                                  <br /> układy elektroniczne*
+                                </li>
+                                <li>Kable lub wtyczki</li>
+                                <li>Piloty (dowolne)</li>
+                                <li>Słuchawki przewodowe</li>
+                                <li>Wybrane głośniki</li>
+                              </ul>
+                            </ResponsiveText>
+                          </TitledArea>
+                        </div>
+                        <div className="size-full">
+                          <TitledArea H={3} title="Czego NIE naprawimy?">
+                            <ResponsiveText className="text-[1.15rem] tracking-normal xl:text-[1.07rem] lg:text-[1.07rem] xs:text-[0.95rem]">
+                              <ul className="list-none text-center *:pb-3">
+                                <li className="leading-tight">
+                                  Wszelkich urządzeń <br />
+                                  wielkogabarytowych
+                                </li>
+                                <li>Komputerów</li>
+                                <li>Sprzętu AGD</li>
+                                <li>Telefonów</li>
+                                <li>Telewizorów</li>
+                              </ul>
+                            </ResponsiveText>
+                          </TitledArea>
+                        </div>
+                        <div className="size-full">
+                          <TitledArea H={3} title="Naprawy obejmują">
+                            <ResponsiveText className="text-[1.15rem] tracking-normal xl:text-[1.07rem] lg:text-[1.07rem] xs:text-[0.95rem]">
+                              <ul className="list-none text-center *:pb-3">
+                                <li className="leading-tight">
+                                  Wymianę wskazanych <br />
+                                  elementów elektronicznych
+                                </li>
+                                <li>Wymianę kabla i/lub wtyczki </li>
+                                <li>Wymianę uszkodzonego gniazda</li>
+                                <li>Wymianę przycisków, diód LED</li>
+                                <li>Wymianę głośnika lub mikrofonu</li>
+                              </ul>
+                            </ResponsiveText>
+                          </TitledArea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex h-full flex-[0_1_33.33%] items-start justify-center p-4 pb-6 xl:flex-[0_1_40%] lg:flex-[0_1_50%]">
-                  <Carousel
-                    theme={topCarouselTheme.carousel}
-                    leftControl={CarouselControl('left')}
-                    rightControl={CarouselControl('right')}
-                    slideInterval={6000}
-                    pauseOnHover
-                    indicators={false}
-                  >
+                <div className="flex flex-[0_1_25%] justify-center p-4 xl:flex-[0_1_40%] lg:flex-[0_1_50%]">
+                  <div className="flex h-full items-center justify-center rounded-xl lg:w-64">
                     <Picture src={'https://placehold.co/630x840/222222/999999'} alt="" className="rounded-xl" />
-                    <Picture src={'https://placehold.co/630x840/222222/999999'} alt="" className="rounded-xl" />
-                    <Picture src={'https://placehold.co/630x840/222222/999999'} alt="" className="rounded-xl" />
-                    <Picture src={'https://placehold.co/630x840/222222/999999'} alt="" className="rounded-xl" />
-                  </Carousel>
+                  </div>
                 </div>
               </div>
             </TitledArea>
@@ -252,7 +315,7 @@ export default function HomePage() {
         </Container>
         <Container color="#eeeeee">
           <Wrapper>
-            <TitledArea title={'Zamówienia'} H={1}></TitledArea>
+            <TitledArea title={'KONTAKT'} H={1}></TitledArea>
           </Wrapper>
         </Container>
       </Main>

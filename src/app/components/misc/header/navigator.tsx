@@ -19,9 +19,8 @@ export default function Navigator() {
     { title: 'Start', url: '#start' },
     { title: 'Oferta sklepu', url: '#oferta' },
     { title: 'Usługi serwisowe', url: '#serwis' },
-    { title: 'Zamówienia', url: '#zamowienia' },
     { title: 'Kontakt', url: '#kontakt' },
-    { title: 'Zdjęcia', url: '#zdjecia' }
+    { title: 'Zdjęcia', url: '#galeria' }
   ]
 
   // Funkcja do zmiany zaznaczonego elementu
