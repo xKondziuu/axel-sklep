@@ -19,10 +19,14 @@ import OfferItem from './components/offeritem'
 import Welcome from './components/welcome'
 import DescribedPhoto from './components/describedphoto'
 import Url from './components/misc/url'
+import GoogleMaps from './components/misc/maps'
+import ContactInfo from './components/contactinfo'
+import Footer from './components/misc/footer'
 
 import type { CustomFlowbiteTheme } from 'flowbite-react'
 import { Carousel } from 'flowbite-react'
 import React from 'react'
+import { Headers as RH } from './components/responsiveheaders'
 
 const topCarouselTheme: CustomFlowbiteTheme = {
   carousel: {
@@ -152,7 +156,7 @@ export default function HomePage() {
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="http://www.axel-sklep.com.pl/media/galeria/img/9.jpg" title="Preparaty chemiczne">
+                  <OfferItem src="https://placehold.co/630x840/222222/999999" title="Preparaty chemiczne">
                     <li>Czyszczenie i konserwacja</li>
                     <li>Do lutowania</li>
                     <li>Termoprzewodzące</li>
@@ -160,7 +164,7 @@ export default function HomePage() {
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="http://www.axel-sklep.com.pl/media/galeria/img/8.jpg" title="Wyświetlacze i LED">
+                  <OfferItem src="https://placehold.co/630x840/222222/999999" title="Wyświetlacze i LED">
                     <li>LED 3mm, 5mm, SMD</li>
                     <li>Taśmy LED RGB na metry</li>
                     <li>Wyświetlacze LED i LCD</li>
@@ -260,7 +264,7 @@ export default function HomePage() {
                                   Wybrane wymontowane
                                   <br /> układy elektroniczne*
                                 </li>
-                                <li>Kable lub wtyczki</li>
+                                <li>Kable i/lub wtyczki</li>
                                 <li>Piloty (dowolne)</li>
                                 <li>Słuchawki przewodowe</li>
                                 <li>Wybrane głośniki</li>
@@ -292,10 +296,10 @@ export default function HomePage() {
                                   Wymianę wskazanych <br />
                                   elementów elektronicznych
                                 </li>
-                                <li>Wymianę kabla i/lub wtyczki </li>
-                                <li>Wymianę uszkodzonego gniazda</li>
-                                <li>Wymianę przycisków, diód LED</li>
-                                <li>Wymianę głośnika lub mikrofonu</li>
+                                <li>Kable i/lub wtyczki </li>
+                                <li>Uszkodzone gniazdo</li>
+                                <li>Przyciski, diody LED</li>
+                                <li>Głośnik lub mikrofon</li>
                               </ul>
                             </ResponsiveText>
                           </TitledArea>
@@ -304,8 +308,8 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-[0_1_25%] justify-center p-4 xl:flex-[0_1_40%] lg:flex-[0_1_50%]">
-                  <div className="flex h-full items-center justify-center rounded-xl lg:w-64">
+                <div className="flex flex-[0_1_25%] justify-center rounded-xl p-4 xl:flex-[0_1_40%] lg:flex-[0_1_50%]">
+                  <div className="flex h-min items-center justify-center rounded-xl lg:w-64">
                     <Picture src={'https://placehold.co/630x840/222222/999999'} alt="" className="rounded-xl" />
                   </div>
                 </div>
@@ -315,10 +319,54 @@ export default function HomePage() {
         </Container>
         <Container color="#eeeeee">
           <Wrapper>
-            <TitledArea title={'KONTAKT'} H={1}></TitledArea>
+            <TitledArea title={'KONTAKT'} H={1}>
+              <div className="flex h-fit w-full flex-row flex-nowrap gap-4">
+                <div className="h-fit w-full">
+                  <div className="mb-16 font-fredoka leading-snug">
+                    <RH.H2 fo>AXEL Electronics 1</RH.H2>
+                    <RH.H5>Janusz Struczak</RH.H5>
+                  </div>
+                  <div className="grid grid-cols-2">
+                    <ContactInfo title="Adres fizyczny:" icon="fa-regular fa-location-dot">
+                      ul. Dworcowa 28, <br />
+                      Wrocław 50-456
+                    </ContactInfo>
+                    <ContactInfo title="Adres email:" icon="fa-regular fa-envelope">
+                      <a href="mailto:axel@axel-sklep.com.pl">axel@axel-sklep.com.pl</a>
+                    </ContactInfo>
+                    <ContactInfo title="Numery telefonów:" icon="fa-regular fa-phone">
+                      71 342 94 43
+                      <br />
+                      71 330 65 49
+                    </ContactInfo>
+                    <ContactInfo title="Godziny otwarcia:" icon="fa-regular fa-clock">
+                      <table className="leading-tight">
+                        <tr>
+                          <td className="pr-2">pon. - pt.:</td>
+                          <td>9:00 - 17:00</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-2">sobota:</td>
+                          <td>10:00 - 14:00</td>
+                        </tr>
+                        <tr>
+                          <td className="pr-2">niedziela:</td>
+                          <td>nieczynne</td>
+                        </tr>
+                      </table>
+                    </ContactInfo>
+                  </div>
+                  <Disclaimer>Telefony odbieramy tylko w godzinach otwarcia.</Disclaimer>
+                </div>
+                <div className="w-full flex-grow">
+                  <GoogleMaps query="AXEL+1+Sklep+Elektroniczny" />
+                </div>
+              </div>
+            </TitledArea>
           </Wrapper>
         </Container>
       </Main>
+      <Footer />
     </div>
   )
 }
