@@ -33,13 +33,13 @@ export default function TitledArea(props: PropsWithChildren<TitledAreaProps>) {
   // prettier-ignore
   return (  
     <div className={`${props.H == 1 ? 'mt-2' : ''} flex w-full flex-col flex-nowrap justify-center ${props.className ? props.className : ''}`}>
-      <div className="contents text-center opacity-90">
+      <div className="contents text-center opacity-90 text-nowrap">
         {returnTitle(props.title, props.H)}
       </div>
       <hr
         className={`mx-auto w-[15%] opacity-80 ${props.H == 1 || !props.H ? 'my-3 mb-4 max-w-24 border-2 xl:my-2 lg:my-2' : 'my-4 lg:my-3'} lg:w-[20%] lg:opacity-90`}
       />
-      <div className="w-full">{props.children}</div>
+      <div className="w-full *:mx-auto">{props.children}</div>
     </div>
   )
 }
