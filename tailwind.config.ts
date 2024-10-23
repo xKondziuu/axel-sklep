@@ -46,13 +46,15 @@ const config: Config = {
       'lg': {'max': '979px'},
       'md': {'max': '767px'},
       'sm': {'max': '639px'},
-      'xs': {'max': '419px'},
+      'xs': {'max': '469px'},
+      '2xs': {'max': '419px'},
       '+2xl': {'min': '1440px'},
       '+xl': {'min': '1190px'},
       '+lg': {'min': '980px'},
       '+md': {'min': '768px'},
       '+sm': {'min': '640px'},
-      '+xs': {'min': '420px'},
+      '+xs': {'min': '480px'},
+      '+2xs': {'min': '420px'},
     }
   },
   plugins: [

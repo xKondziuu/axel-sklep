@@ -86,7 +86,7 @@ export default function Header() {
             <div className="contents w-max lg:hidden">
               <Navigator />
             </div>
-            <div className="contents xs:hidden +lg:hidden">
+            <div className="contents 2xs:hidden +lg:hidden">
               <InfoItem icon="fa-solid fa-phone">
                 <span className="sm:hidden">(+48) </span>71 342 94 43
               </InfoItem>
