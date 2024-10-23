@@ -1,6 +1,11 @@
-import Url from './url'
+import { CSSProperties } from 'react'
 
-export default function Footer() {
+interface FooterProps {
+  background?: string
+  whitetext?: boolean
+}
+
+export default function Footer({ background, whitetext = true }: FooterProps) {
   const year = new Date().getFullYear()
 
   const url = (text: string, url: string) => {
@@ -12,7 +17,10 @@ export default function Footer() {
   }
 
   return (
-    <footer className="mt-10 w-full bg-[#141414] p-6 text-[0.95rem] tracking-normal text-white xl:text-[0.87rem] lg:text-[0.87rem] xs:text-[0.75rem]">
+    <footer
+      className={`w-full p-6 text-[0.95rem] tracking-normal ${whitetext ? 'text-white' : 'text-black'} xl:text-[0.87rem] lg:text-[0.87rem] xs:text-[0.75rem]`}
+      style={{ backgroundColor: background ? background : '#141414' }}
+    >
       <div className="mx-auto max-w-[42rem] text-center">
         <div className="flex flex-row flex-nowrap justify-center opacity-75">
           {url('Polityka cookies', '')}
