@@ -16,6 +16,7 @@ import { FlexGrid } from './components/misc/flexgrid'
 import Disclaimer from './components/disclaimer'
 //
 import OfferItem from './components/offeritem'
+import GalleryImage from './components/galleryimage'
 import Welcome from './components/welcome'
 import DescribedPhoto from './components/describedphoto'
 import Url from './components/misc/url'
@@ -132,7 +133,7 @@ export default function HomePage() {
         <Container background="#eee">
           <Wrapper>
             <TitledArea H={1} title="Nasza Oferta">
-              <FlexGrid className="h-64 flex-[0_1_25%] p-2.5 2xl:flex-[0_1_33.33%] lg:flex-[0_1_50%] sm:flex-[0_1_100%]">
+              <FlexGrid className="h-64 flex-[0_1_25%] p-2.5 2xl:flex-[0_1_33.33%] lg:flex-[0_1_50%] sm:h-auto sm:flex-[0_1_100%] sm:flex-col">
                 <FlexGrid.Item>
                   <OfferItem src="https://placehold.co/640x360/222222/999999" title="Akustyka">
                     <li>Czujniki</li>
@@ -368,7 +369,25 @@ export default function HomePage() {
         <Container background="#141414" whitetext>
           <Wrapper>
             <TitledArea title={'Galeria zdjęć'} H={1}>
-              {/* TODO */}
+              <div className="grid w-full grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
+              </div>
             </TitledArea>
           </Wrapper>
         </Container>
