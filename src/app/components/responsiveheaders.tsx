@@ -9,7 +9,7 @@ interface HeaderProps {
 export function H1(props: PropsWithChildren<HeaderProps>) {
   return (
     <div className={`${!props.fo && 'font-verdana'} font-semibold tracking-normal opacity-90 lg:font-bold`}>
-      <h1 className="text-4xl xl:text-[1.95rem] lg:text-[1.8rem] xs:text-[1.35rem]">{props.children as string}</h1>
+      <h1 className="text-4xl xl:text-[1.95rem] lg:text-[1.8rem]">{props.children as string}</h1>
     </div>
   )
 }

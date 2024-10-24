@@ -39,7 +39,7 @@ export default function TitledArea(props: PropsWithChildren<TitledAreaProps>) {
       <hr
         className={`mx-auto w-[15%] opacity-80 ${props.H == 1 || !props.H ? 'my-3 mb-4 max-w-24 border-2 xl:my-2 lg:my-2' : 'my-4 lg:my-3'} lg:w-[20%] lg:opacity-90`}
       />
-      <div className="w-full *:mx-auto">{props.children}</div>
+      <div className="w-full *:mx-auto sm:mt-2.5">{props.children}</div>
     </div>
   )
 }
