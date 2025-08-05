@@ -25,6 +25,8 @@ type FlexGridObject = React.FC<PropsWithChildren<{ className?: string }>> & {
   Item: typeof FlexGridItem
 }
 
-export const FlexGrid: FlexGridObject = Object.assign(FlexGridComponent, {
+const FlexGrid: FlexGridObject = Object.assign(FlexGridComponent, {
   Item: FlexGridItem
 })
+
+export default FlexGrid

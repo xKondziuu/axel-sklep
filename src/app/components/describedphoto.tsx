@@ -1,5 +1,5 @@
 import type { PropsWithChildren, ReactNode } from 'react'
-import Picture from './misc/picture'
+import Picture from './picture'
 import { H4 } from './responsiveheaders'
 import ResponsiveText from './responsivetext'
 

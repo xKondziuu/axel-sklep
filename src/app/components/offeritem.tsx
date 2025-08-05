@@ -6,7 +6,6 @@ import TitledArea from './titledarea'
 import ResponsiveText from './responsivetext'
 
 interface OfferItemProps {
-  src: string
   title: titleType
 }
 
@@ -18,15 +17,12 @@ export default function OfferItem(props: PropsWithChildren<OfferItemProps>) {
   }
 
   return (
-    <div
-      className={`h-56 overflow-hidden rounded-xl bg-cover bg-center transition-[height] sm:h-auto`}
-      style={{ /*backgroundImage: `url(${props.src})`*/ backgroundColor: '#222222' }}
-    >
-      <div className="flex size-full items-center justify-center rounded-xl bg-[#00000060] text-white *:*:drop-shadow-sm sm:justify-start sm:px-10 sm:py-4">
+    <div className="h-56 overflow-hidden bg-cover bg-center transition-[height] sm:h-auto">
+      <div className="flex size-full items-center justify-center rounded-xl font-verdana sm:justify-start sm:px-0 sm:py-4">
         <div className="contents sm:hidden">
           <TitledArea H={3} title={props.title}>
-            <ResponsiveText className="text-[1.15rem] tracking-normal xl:text-[1.07rem] lg:text-[1.07rem] xs:text-[0.95rem]">
-              <ul className="list-none text-center drop-shadow-sm *:pb-1">{props.children}</ul>
+            <ResponsiveText className="text-[1.11rem] tracking-wide xl:text-[1.07rem] lg:text-[1.07rem] xs:text-[0.95rem]">
+              <ul className="list-none text-center *:pb-2">{props.children}</ul>
             </ResponsiveText>
           </TitledArea>
         </div>
@@ -41,10 +37,8 @@ export default function OfferItem(props: PropsWithChildren<OfferItemProps>) {
               </button>
             </div>
             <div className={`${isExpanded ? 'h-40' : 'h-0 opacity-0'} w-full pt-5 transition-all`}>
-              <ResponsiveText className="text-[1.15rem] tracking-normal xl:text-[1.07rem] lg:text-[1.07rem] xs:text-[0.95rem]">
-                <ul className="list-none text-center drop-shadow-sm *:pb-1 sm:list-disc sm:pl-6 sm:text-left sm:*:pb-2">
-                  {props.children}
-                </ul>
+              <ResponsiveText className="text-[1.11rem] tracking-wide xl:text-[1.07rem] lg:text-[1.07rem] xs:text-[0.95rem]">
+                <ul className="list-none text-center *:pb-2 sm:list-disc sm:pl-6 sm:text-left sm:*:pb-2">{props.children}</ul>
               </ResponsiveText>
             </div>
           </div>

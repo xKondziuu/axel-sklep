@@ -23,15 +23,15 @@ export default function Footer({ background, whitetext = true }: FooterProps) {
     >
       <div className="mx-auto max-w-[42rem] text-center">
         <div className="flex flex-row flex-nowrap justify-center opacity-75">
-          {url('Polityka cookies', '')}
-          <span className="mx-2">|</span>
           {url('Polityka prywatności', '')}
           <span className="mx-2">|</span>
-          {url('Zamów stronę', '')}
+          {url('Zarządzaj cookies', '')}
+          <span className="mx-2">|</span>
+          {url('Zgłoś problem', '')}
         </div>
         <hr className="mx-auto mb-3.5 mt-3 w-28 opacity-65" />
         <span className="font-semibold tracking-wide opacity-75">
-          &copy; {year} AXEL Electronics 1 / {url('KMSK', '')}
+          &copy; {year} AXEL Electronics 1 &nbsp;/&nbsp; {url('KonradSK', 'https://www.konradsk.pl')}
         </span>
       </div>
     </footer>

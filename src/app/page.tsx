@@ -1,33 +1,25 @@
 'use client'
 
-import Image from 'next/image'
-import Picture from './components/misc/picture'
-
-import Header from './components/misc/header'
-import Main from './components/misc/main'
-
-import Container from './components/misc/containter'
-import Wrapper from './components/misc/wrapper'
-
-import TitledArea from './components/titledarea'
-import FullHeight from './components/fullheight'
-import ResponsiveText from './components/responsivetext'
-import { FlexGrid } from './components/misc/flexgrid'
-import Disclaimer from './components/disclaimer'
-//
-import OfferItem from './components/offeritem'
-import GalleryImage from './components/galleryimage'
-import Welcome from './components/welcome'
-import DescribedPhoto from './components/describedphoto'
-import Url from './components/misc/url'
-import GoogleMaps from './components/misc/maps'
-import ContactInfo from './components/contactinfo'
-import Footer from './components/misc/footer'
-
 import type { CustomFlowbiteTheme } from 'flowbite-react'
 import { Carousel } from 'flowbite-react'
-import React from 'react'
+import ContactInfo from './components/contactinfo'
+import Container from './components/containter'
+import DescribedPhoto from './components/describedphoto'
+import Disclaimer from './components/disclaimer'
+import FlexGrid from './components/flexgrid'
+import Footer from './components/footer'
+import FullHeight from './components/fullheight'
+import GalleryImage from './components/galleryimage'
+import GoogleMaps from './components/maps'
+import Header from './components/header'
 import { Headers as RH } from './components/responsiveheaders'
+import Main from './components/main'
+import OfferItem from './components/offeritem'
+import ResponsiveText from './components/responsivetext'
+import TitledArea from './components/titledarea'
+import Url from './components/url'
+import Welcome from './components/welcome'
+import Wrapper from './components/wrapper'
 
 const topCarouselTheme: CustomFlowbiteTheme = {
   carousel: {
@@ -46,29 +38,12 @@ const topCarouselControl = (dir: 'left' | 'right') => {
   )
 }
 
-const servicesCarouselTheme: CustomFlowbiteTheme = {
-  carousel: {
-    indicators: {
-      base: 'h-1.5 w-1.5 rounded-full opacity-70 drop-shadow-lg'
-    }
-  }
-}
-
-const servicesCarouselControl = (dir: 'left' | 'right') => {
-  // prettier-ignore
-  return (
-    <div className={`text-4xl opacity-65 hover:opacity-80 transition-opacity drop-shadow-lg lg:absolute lg:top-14 ${dir == 'left' ? 'lg:left-1 xs:left-0' : 'lg:right-1 xs:right-0'} xs:text-3xl +xs:p-0.5`}>
-      <i className={`fa-light fa-angle-${dir}`} />
-    </div>
-  )
-}
-
-export default function HomePage() {
+export default function Page() {
   return (
     <div id="root">
       <Header />
       <Main>
-        <FullHeight>
+        <FullHeight id="start">
           <Welcome />
           <Container background="#333" whitetext>
             <Wrapper>
@@ -130,126 +105,111 @@ export default function HomePage() {
             </div>
           </Wrapper>
         </Container>
-        <Container background="#eee">
-          <Wrapper>
-            <TitledArea H={1} title="Nasza Oferta">
-              <FlexGrid className="h-64 flex-[0_1_25%] p-2.5 2xl:flex-[0_1_33.33%] lg:flex-[0_1_50%] sm:h-auto sm:flex-[0_1_100%] sm:flex-col">
+        <Container background="#fff">
+          <Wrapper id="oferta">
+            <TitledArea H={1} title="Nasza Oferta" className="mb-2 lg:mb-1 xs:mb-0">
+              <FlexGrid className="h-56 flex-[0_1_25%] p-3 2xl:flex-[0_1_33.33%] lg:flex-[0_1_50%] sm:h-auto sm:flex-[0_1_100%] sm:flex-col">
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Akustyka">
-                    <li>Czujniki</li>
+                  <OfferItem title="Akustyka">
                     <li>Głośniki</li>
                     <li>Mikrofony</li>
-                    <li>Sygnalizatory</li>
+                    <li>Element 3</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Bezpieczniki">
-                    <li>5,20mm oraz 6,30mm</li>
+                  <OfferItem title="Bezpieczniki">
                     <li>Polimerowe</li>
                     <li>Samochodowe</li>
                     <li>Termiczne</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/630x840/222222/999999" title="Preparaty chemiczne">
-                    <li>Czyszczenie i konserwacja</li>
+                  <OfferItem title="Preparaty chemiczne">
                     <li>Do lutowania</li>
                     <li>Termoprzewodzące</li>
                     <li>Smary i oleje</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/630x840/222222/999999" title="Wyświetlacze i LED">
-                    <li>LED 3mm, 5mm, SMD</li>
+                  <OfferItem title="Wyświetlacze i LED">
                     <li>Taśmy LED RGB na metry</li>
                     <li>Wyświetlacze LED i LCD</li>
                     <li>Wyświetlacze segmentowe</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Artykuły antenowe">
+                  <OfferItem title="Artykuły antenowe">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Elementy elektroniczne">
+                  <OfferItem title="Lista elementów">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Elementy elektroniczne">
+                  <OfferItem title="Lista elementów">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Elementy elektroniczne">
+                  <OfferItem title="Lista elementów">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Elementy elektroniczne">
+                  <OfferItem title="Lista elementów">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Elementy elektroniczne">
+                  <OfferItem title="Lista elementów">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Elementy elektroniczne">
+                  <OfferItem title="Lista elementów">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
                 <FlexGrid.Item>
-                  <OfferItem src="https://placehold.co/640x360/222222/999999" title="Elementy elektroniczne">
+                  <OfferItem title="Lista elementów">
                     <li>Element 1</li>
                     <li>Element 2</li>
                     <li>Element 3</li>
-                    <li>Element 4</li>
                   </OfferItem>
                 </FlexGrid.Item>
               </FlexGrid>
               <Disclaimer>
-                Nie wszystkie produkty z oferty są dostępne od ręki, zachęcamy do kontaktu{' '}
-                <div className="inline lg:hidden">telefonicznego, mailowego lub osobistego,</div>
-                aby sprawdzić dostępność. <br className="lg:hidden" />W razie braku wybranego towaru, można go zamówić i odebrać w
-                dogodnym terminie. Więcej informacji w sekcji <Url href="#zamowienia">Zamówienia</Url>.
+                Nie wszystkie produkty z oferty są dostępne od ręki, zachęcamy do kontaktu, aby sprawdzić dostępność.
               </Disclaimer>
             </TitledArea>
           </Wrapper>
         </Container>
         <Container background="url('https://placehold.co/1280x720/222222/999999')" whitetext>
-          <Wrapper>
+          <Wrapper id="serwis">
             <TitledArea H={1} title="Usługi serwisowe">
-              <div className="flex h-full w-[100vw] min-w-[320px] flex-col justify-center lg:px-6 +xl:max-w-[73rem]">
+              <div className="flex h-full w-[100vw] min-w-[320px] flex-col justify-center lg:px-6 +xl:max-w-[70rem]">
                 <div className="w-full pt-2">
                   <ResponsiveText align="center">
-                    Oferujemy również drobne naprawy wybranych sprzętów elektronicznych, zgodnie z poniższymi zasadami. Chociaż nie
-                    jesteśmy autoryzowanym serwisem, dokładamy wszelkich starań, aby każda naprawa została wykonana z najwyższą
-                    starannością. Zastrzegamy sobie jednak prawo do odmowy naprawy w określonych przypadkach. Ze względu na wysokie
-                    zainteresowanie, czas oczekiwania na naprawę może być wydłużony w zależności od rodzaju urządzenia.
+                    Oferujemy drobne naprawy wybranych sprzętów elektronicznych, zgodnie z poniższymi zasadami. Chociaż nie jesteśmy
+                    autoryzowanym serwisem, dokładamy wszelkich starań, aby każda naprawa została wykonana z najwyższą starannością.
+                    Zastrzegamy sobie jednak prawo do odmowy naprawy w określonych przypadkach. Ze względu na wysokie
+                    zainteresowanie, czas oczekiwania może być wydłużony w zależności od rodzaju urządzenia.
                   </ResponsiveText>
                 </div>
                 <div className="mx-8 pb-3 pt-6 lg:mx-0">
@@ -261,10 +221,10 @@ export default function HomePage() {
                             <ul className="list-none text-center *:pb-3">
                               <li className="leading-tight">
                                 Wybrane wymontowane
-                                <br /> układy elektroniczne*
+                                <br /> układy elektroniczne
                               </li>
                               <li>Kable i/lub wtyczki</li>
-                              <li>Piloty (dowolne)*</li>
+                              <li>Piloty telewizyjne</li>
                               <li>Słuchawki przewodowe</li>
                               <li>Wybrane głośniki</li>
                             </ul>
@@ -272,7 +232,7 @@ export default function HomePage() {
                         </TitledArea>
                       </div>
                       <div className="w-full">
-                        <TitledArea H={4} title="Czego NIE naprawimy?">
+                        <TitledArea H={4} title="Czego nie naprawimy?">
                           <ResponsiveText className="text-[1.15rem] tracking-normal xl:text-[1.07rem] lg:text-[0.97rem] sm:text-[0.92rem]">
                             <ul className="list-none text-center *:pb-3">
                               <li className="leading-tight">
@@ -310,8 +270,8 @@ export default function HomePage() {
             </TitledArea>
           </Wrapper>
         </Container>
-        <Container background="#eee">
-          <Wrapper>
+        <Container background="#fff">
+          <Wrapper id="kontakt">
             <TitledArea title={'KONTAKT'} H={1}>
               <div className="flex h-fit w-full flex-row flex-nowrap gap-4 lg:flex-col lg:gap-4">
                 <div className="h-fit w-full lg:w-full 2xs:w-full">
@@ -367,11 +327,9 @@ export default function HomePage() {
           </Wrapper>
         </Container>
         <Container background="#141414" whitetext>
-          <Wrapper>
+          <Wrapper id="galeria">
             <TitledArea title={'Galeria zdjęć'} H={1}>
               <div className="grid w-full grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
-                <GalleryImage src="https://placehold.co/640x360/222222/999999" />
                 <GalleryImage src="https://placehold.co/640x360/222222/999999" />
                 <GalleryImage src="https://placehold.co/640x360/222222/999999" />
                 <GalleryImage src="https://placehold.co/640x360/222222/999999" />

@@ -8,6 +8,7 @@ interface TitledAreaProps {
   title: titleType
   H?: HeadersNumbers
   className?: string
+  id?: string
 }
 
 export default function TitledArea(props: PropsWithChildren<TitledAreaProps>) {

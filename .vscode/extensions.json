@@ -5,7 +5,6 @@
     "editorconfig.editorconfig",
     "dsznajder.es7-react-js-snippets",
     "dbaeumer.vscode-eslint",
-    "lehni.vscode-fix-checksums",
     "ecmel.vscode-html-css",
     "visualstudioexptteam.vscodeintellicode",
     "visualstudioexptteam.intellicode-api-usage-examples",
@@ -18,6 +17,7 @@
     "leodriesch.paste-html-as-jsx",
     "christian-kohler.path-intellisense",
     "csstools.postcss",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "rimuruchan.vscode-fix-checksums-next"
   ]
 }
